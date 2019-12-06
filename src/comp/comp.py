@@ -45,7 +45,7 @@ print(c)
 
 # Write a list comprehension that creates a list of all the ages plus 10.
 print("Ages plus 10:")
-d = [i.age for i in humans if i.age > 10]
+d = [i.age + 10 for i in humans]
 print(d)
 
 # Write a list comprehension that creates a list of strings which are the name
@@ -66,9 +66,10 @@ print(f)
 # The "humans" list should be unmodified.
 print("All names uppercase:")
 def modify(human):
-    human.name = human.name.upper()
-    human.age += 5
-    return human
+    newhuman = Human(human.name, human.age)
+    newhuman.name = newhuman.name.upper()
+    newhuman.age += 5
+    return newhuman
 g = [modify(i) for i in humans]
 print(g)
 
